@@ -30,8 +30,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4.1.1
         with:
-          repository:  "ghosharijit1986/${{ inputs.name }}"
-          ref: main
+          repository:  "ghosharijit1986/${{ inputs.repository }}"
+          ref: release
          
 
       # Runs a single command using the runners shell
@@ -58,7 +58,7 @@ jobs:
           artifactName2=$(ls target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
           mv $artifactName1 $artifactName2
       - name: Upload artifact 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: artifacts
           path: target/*.jar
