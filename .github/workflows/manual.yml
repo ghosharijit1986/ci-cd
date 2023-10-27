@@ -30,7 +30,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4.1.1
         with:
-          repository:  "ghosharijit86/${{ inputs.name }}"
+          repository:  "ghosharijit1986/${{ inputs.name }}"
           ref: main
          
 
