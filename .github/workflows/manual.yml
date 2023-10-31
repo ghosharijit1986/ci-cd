@@ -69,10 +69,11 @@ jobs:
        with:
           repository:  "ghosharijit1986/mulesoft-configs-dev"
      - name: yaml read
+       id: yaml-read
        uses: pietrobolcato/action-read-yaml@1.1.0
        with:
         config: "ghosharijit1986/mulesoft-configs-dev/mule-config-properties.yaml"
       
      - name: Print Outputs
        run: |
-          echo "Variable Name: ${{ temp.name }}"
+          echo "Variable Name: ${{ steps.yaml-read.temp.name }}"
