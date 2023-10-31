@@ -62,3 +62,17 @@ jobs:
         with:
           name: artifacts
           path: target/*.jar
+  yaml-read:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v4.1.1
+       with:
+          repository:  "ghosharijit1986/mulesoft-configs-dev"
+     - name: yaml read
+       uses: pietrobolcato/action-read-yaml@1.1.0
+       with:
+        config: "ghosharijit1986/mulesoft-configs-dev/mule-config-properties.yaml"
+      
+     - name: Print Outputs
+       run: |
+          echo "Variable Name: ${{ temp.name }}"
