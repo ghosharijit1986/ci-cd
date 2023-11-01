@@ -77,4 +77,4 @@ jobs:
       
      - name: Print Outputs
        run: |
-          echo "Variable Name: ${{ steps.yaml-read.outputs.temp.name }}"
+          echo "Variable Name: ${{ steps.yaml-read.outputs.['temp.name'] }}"
