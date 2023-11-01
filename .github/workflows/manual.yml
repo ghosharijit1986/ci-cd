@@ -73,7 +73,7 @@ jobs:
        id: yaml-read
        uses: pietrobolcato/action-read-yaml@1.1.0
        with:
-        config: "ghosharijit1986/mulesoft-configs-dev/mule-config-properties.yaml"
+        config: "mule-config-properties.yaml"
       
      - name: Print Outputs
        run: |
