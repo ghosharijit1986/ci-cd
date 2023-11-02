@@ -69,7 +69,10 @@ jobs:
         contents: read
         packages: write
       steps:
-          - uses: actions/checkout@v4
+          - uses: actions/checkout@v4.1.1
+            with:
+              repository:  "ghosharijit1986/${{ inputs.repository }}"
+              ref: release
           - uses: actions/setup-java@v3
             with:
               java-version: '11'
