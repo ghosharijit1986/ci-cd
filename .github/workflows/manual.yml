@@ -21,49 +21,49 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  build:
+  #build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+    #steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4.1.1
-        with:
-          repository:  "ghosharijit1986/${{ inputs.repository }}"
-          ref: release
-         
+     # - uses: actions/checkout@v4.1.1
+    #    with:
+      #    repository:  "ghosharijit1986/${{ inputs.repository }}"
+         # ref: release
+    #     
 
       # Runs a single command using the runners shell
-      - name: Cache Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+    #  - name: Cache Dependencies
+  #      uses: actions/cache@v3
+ #       with:
+  #        path: ~/.m2/repository
+  #        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+  #        restore-keys: |
+    #        ${{ runner.os }}-maven-
 
       # Runs a set of commands using the runners shell
-      - name: Set-up JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'zulu'
-          java-version: 8
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
-      - name: Stamp artifact file name with commit hash
-        run: |
-          artifactName1=$(ls target/*.jar | head -1)
-          commitHash=$(git rev-parse --short "$GITHUB_SHA")
-          artifactName2=$(ls target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
-          mv $artifactName1 $artifactName2
-      - name: Upload artifact 
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: artifacts
-          path: target/*.jar
+  #    - name: Set-up JDK
+  #      uses: actions/setup-java@v3
+  #      with:
+  #        distribution: 'zulu'
+  #        java-version: 8
+  #    - name: Build with Maven
+  #      run: mvn -B package --file pom.xml
+  #    - name: Stamp artifact file name with commit hash
+  #      run: |
+   #       artifactName1=$(ls target/*.jar | head -1)
+   #       commitHash=$(git rev-parse --short "$GITHUB_SHA")
+    #      artifactName2=$(ls target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
+   #       mv $artifactName1 $artifactName2
+  #    - name: Upload artifact 
+   #     uses: actions/upload-artifact@v3.1.3
+  #      with:
+   #       name: artifacts
+  #        path: target/*.jar
   publish:
-      needs: [build]
+     # needs: [build]
       runs-on: ubuntu-latest
       permissions:
         contents: read
@@ -82,7 +82,7 @@ jobs:
             env:
               PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
   yaml-read:
-    needs: [build]
+    #needs: [build]
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v4.1.1
