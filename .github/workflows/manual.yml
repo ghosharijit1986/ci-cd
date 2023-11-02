@@ -78,7 +78,7 @@ jobs:
               java-version: '11'
               distribution: 'temurin'
           - name: Publish package
-            run: mvn deploy
+            run: mvn -e deploy
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   yaml-read:
