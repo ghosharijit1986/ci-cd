@@ -80,7 +80,7 @@ jobs:
           - name: Publish package
             run: mvn -e deploy
             env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
   yaml-read:
     needs: [build]
     runs-on: ubuntu-latest
