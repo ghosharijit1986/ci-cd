@@ -78,7 +78,7 @@ jobs:
               java-version: '11'
               distribution: 'temurin'
           - name: Publish package
-            run: mvn -e -X deploy
+            run: mvn -e deploy
             env:
               PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
   yaml-read:
