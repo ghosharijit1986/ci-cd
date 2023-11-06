@@ -61,7 +61,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.3
         with:
           name: ${{ inputs.repository }}
-          path: ghosharijit1986/test
+          path: target
  # publish:
      # needs: [build]
  #     runs-on: ubuntu-latest
