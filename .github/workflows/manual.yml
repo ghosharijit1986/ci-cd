@@ -27,11 +27,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v3
-
-      - run: mkdir -p "ghosharijit1986/ci-cd/target-artifact"
-
-    
+   
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4.1.1
       
@@ -68,7 +64,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.3
         with:
           name: ${{ inputs.repository }}
-          path: target-artifact
+          path: target/*.jar
  # publish:
      # needs: [build]
  #     runs-on: ubuntu-latest
