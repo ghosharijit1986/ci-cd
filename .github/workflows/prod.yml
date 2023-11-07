@@ -32,7 +32,7 @@ jobs:
         uses: RomanosTrechlis/actions-copy-files@1.0
 
         with:
-          source-files: /home/runner/work/_temp/artifact.zip
+          source-files: artifact.zip
           destination-username: ghosharijit1986
           destination-repository: ci-cd
           destination-branch: main
