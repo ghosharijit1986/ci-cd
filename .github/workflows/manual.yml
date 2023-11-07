@@ -39,7 +39,7 @@ jobs:
       - name: File List
         uses: the-coding-turtle/ga-file-list@v0.4.1
         with:
-          directory: home/runner/work/ci-cd/ci-cd/.git/
+          directory: .git
           
       # Runs a single command using the runners shell
       - name: Cache Dependencies
