@@ -31,5 +31,5 @@ jobs:
           source-files: mq-test-1.0.0-SNAPSHOT-mule-application-4151927.jar
           destination-username: ghosharijit1986
           destination-repository: ci-cd
-        env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          API_TOKEN_GITHUB: ${{ secrets.PAT_TOKEN }}
+       
