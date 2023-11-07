@@ -36,7 +36,11 @@ jobs:
           ref: release
           
     #     
-
+      - name: File List
+        uses: the-coding-turtle/ga-file-list@v0.4.1
+        with:
+          directory: /usr/bin/git
+          
       # Runs a single command using the runners shell
       - name: Cache Dependencies
         uses: actions/cache@v3
