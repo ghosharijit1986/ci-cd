@@ -29,11 +29,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Copy File
-        uses: canastro/copy-action@0.0.2
+        uses: RomanosTrechlis/actions-copy-files@1.0
 
         with:
-          source: /home/runner/work/ci-cd/ci-cd/ghosharijit1986/ci-cd/mq-test-1.0.0-SNAPSHOT-mule-application-4151927.jar
-          target: ${{ github.repository }}
+          source-files: /home/runner/work/ci-cd/ci-cd/ghosharijit1986/ci-cd/mq-test-1.0.0-SNAPSHOT-mule-application-4151927.jar
+          destination-username: ghosharijit1986
+          destination-repository: ${{ github.repository }}
+          destination-branch: main
+          
           
         env:
           API_TOKEN_GITHUB: ${{ secrets.PAT_TOKEN }}
