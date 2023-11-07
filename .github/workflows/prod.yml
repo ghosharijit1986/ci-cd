@@ -32,7 +32,7 @@ jobs:
         uses: RomanosTrechlis/actions-copy-files@1.0
 
         with:
-          source-files: /home/runner/work/ci-cd/ci-cd/ghosharijit1986/ci-cd/mq-test-1.0.0-SNAPSHOT-mule-application-4151927.jar
+          source-files: /home/runner/work/_temp/artifact.zip
           destination-username: ghosharijit1986
           destination-repository: ci-cd
           destination-branch: main
