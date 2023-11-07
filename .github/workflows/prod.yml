@@ -25,3 +25,9 @@ jobs:
          workflow: manual.yml
          run_number: 35
          name: mq-test
+      - name: Copy File
+        uses: lubu12/copy-files-to-repository@v1
+        with:
+          source-files: mq-test-1.0.0-SNAPSHOT-mule-application-4151927.jar
+          destination-username: ghosharijit1986
+          destination-repository: ci-cd
