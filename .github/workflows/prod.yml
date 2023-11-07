@@ -24,7 +24,7 @@ jobs:
         with:
          name: mq-test
          path: ${{ github.repository }}
-         repo: ghosharijit1986/ci-cd
+         repo: ${{ github.repository }}
          commitHash: 4151927
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
