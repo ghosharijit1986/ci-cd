@@ -36,10 +36,6 @@ jobs:
           destination-username: ghosharijit1986
           destination-repository: ${{ github.repository }}
           destination-branch: main
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          
-          
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.PAT_TOKEN }}
+
+
        
