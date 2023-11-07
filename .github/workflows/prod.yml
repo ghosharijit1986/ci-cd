@@ -20,13 +20,15 @@ jobs:
           
       # Runs a single command using the runners shell
       - name: Download Previous Artifact
-        uses: dawidd6/action-download-artifact@v2.28.0
+        uses: alextompkins/download-prior-artifact@v1.1.1
         with:
-         workflow: manual.yml
-         run_number: 35
          name: mq-test
+         path: ${{ github.repository }}
+         repo: ghosharijit1986/ci-cd
+         commitHash: 4151927
       - name: Copy File
         uses: lubu12/copy-files-to-repository@v1
+
         with:
           source-files: mq-test-1.0.0-SNAPSHOT-mule-application-4151927.jar
           destination-username: ghosharijit1986
