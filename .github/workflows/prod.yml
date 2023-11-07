@@ -32,7 +32,7 @@ jobs:
         uses: canastro/copy-action@0.0.2
 
         with:
-          source: /home/runner/work/ci-cd/ci-cd/ghosharijit1986/ci-cd
+          source: /home/runner/work/ci-cd/ci-cd/ghosharijit1986/ci-cd/mq-test-1.0.0-SNAPSHOT-mule-application-4151927.jar
           target: ${{ github.repository }}
           
         env:
