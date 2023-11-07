@@ -26,6 +26,8 @@ jobs:
          path: ${{ github.repository }}
          repo: ghosharijit1986/ci-cd
          commitHash: 4151927
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Copy File
         uses: lubu12/copy-files-to-repository@v1
 
