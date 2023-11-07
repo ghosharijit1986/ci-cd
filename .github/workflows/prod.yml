@@ -34,7 +34,7 @@ jobs:
         with:
           source-files: /home/runner/work/ci-cd/ci-cd/ghosharijit1986/ci-cd/mq-test-1.0.0-SNAPSHOT-mule-application-4151927.jar
           destination-username: ghosharijit1986
-          destination-repository: ${{ github.repository }}
+          destination-repository: ci-cd
           destination-branch: main
         env:
          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
