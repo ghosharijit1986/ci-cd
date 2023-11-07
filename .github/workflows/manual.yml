@@ -43,7 +43,8 @@ jobs:
       #   only_files_starts_with_delimiter: mule
 
       - name: File List using Bash
-        run: bash ${GITHUB_REPOSITORY}/.github/workflows/list-files.sh
+        run: |
+         ls -la
         
           
       # Runs a single command using the runners shell
