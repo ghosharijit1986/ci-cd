@@ -37,7 +37,7 @@ jobs:
           destination-repository: ${{ github.repository }}
           destination-branch: main
         env:
-         TOKEN: ${{secrets.GITHUB_TOKEN}}
+         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
        
