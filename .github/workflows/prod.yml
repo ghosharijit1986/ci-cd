@@ -35,7 +35,7 @@ jobs:
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: manual.yml
-          run_number: 64
+          run_number: 66
          
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -48,7 +48,7 @@ jobs:
           
       - name: Replace config file
         run: |
-          jar uf mq-test-1.0.0-SNAPSHOT-mule-application-dd75afd mule-config-properties.yaml
+          jar uf mq-test-1.0.0-SNAPSHOT-mule-application.jar mule-config-properties.yaml
           
       - name: Upload artifact 
         uses: actions/upload-artifact@v3.1.3
