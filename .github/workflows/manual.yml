@@ -33,17 +33,19 @@ jobs:
           repository:  "ghosharijit1986/${{ inputs.repository }}"
           ref: release
           
-    #     
-      #- name: File List
-      #  uses: the-coding-turtle/ga-file-list@v0.4.1
-      #  with:
-       #  directory: git
-      #   only_files_starts_with_delimiter: mule
+
 
       - name: Create Dir
         run: |
           mkdir config
-      
+
+      - name : Config Checkout
+      - uses: actions/checkout@v4.1.1
+        with:
+          repository: "ghosharijit1986/mulesoft-configs-dev"
+          ref: main
+          path: config
+          
       - name: File List using Bash
         run: |
          #cd ./src/main/resources
@@ -96,19 +98,19 @@ jobs:
     #        run: mvn --batch-mode deploy
     #        env:
      #         PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-  yaml-read:
+  #yaml-read:
     #needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-     - uses: actions/checkout@v4.1.1
-       with:
-          repository:  "ghosharijit1986/mulesoft-configs-dev"
-     - name: yaml read
-       id: yaml-read
-       uses: pietrobolcato/action-read-yaml@1.1.0
-       with:
-        config: "mule-config-properties.yaml"
+    #runs-on: ubuntu-latest
+    #steps:
+     #- uses: actions/checkout@v4.1.1
+     #  with:
+     #     repository:  "ghosharijit1986/mulesoft-configs-dev"
+    # - name: yaml read
+    #   id: yaml-read
+    #   uses: pietrobolcato/action-read-yaml@1.1.0
+    #   with:
+    #    config: "mule-config-properties.yaml"
       
-     - name: Print Outputs
-       run: |
-          echo "Variable Name: ${{ steps.yaml-read.outputs['temp.name'] }}"
+    # - name: Print Outputs
+    #   run: |
+    #      echo "Variable Name: ${{ steps.yaml-read.outputs['temp.name'] }}"
