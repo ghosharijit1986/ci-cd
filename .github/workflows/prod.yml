@@ -66,7 +66,7 @@ jobs:
 
       - name: Rename Artifact
         run: |
-          jarFile= "$(basename /prior-artifact/mq-test/mq-test-1.0.0-SNAPSHOT-mule-application.jar)"
+          jarFile= basename /prior-artifact/mq-test/mq-test-1.0.0-SNAPSHOT-mule-application.jar
           echo $jarFile
       - name: Upload artifact 
         uses: actions/upload-artifact@v3.1.3
