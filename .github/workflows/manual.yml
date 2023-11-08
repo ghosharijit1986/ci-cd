@@ -40,9 +40,13 @@ jobs:
        #  directory: git
       #   only_files_starts_with_delimiter: mule
 
+      - name: Create Dir
+        run: |
+          mkdir config
+      
       - name: File List using Bash
         run: |
-         cd ./src/main/resources
+         #cd ./src/main/resources
          ls -la
         
           
