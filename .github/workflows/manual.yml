@@ -34,6 +34,12 @@ jobs:
         with:
           repository:  "ghosharijit1986/${{ inputs.repository }}"
           ref: release
+
+      - uses: actions/checkout@v4.1.1
+      
+        with:
+          repository:  "ghosharijit1986/mulesoft-configs-dev"
+          ref: main
           
     #     
       #- name: File List
@@ -41,6 +47,10 @@ jobs:
       #  with:
        #  directory: git
       #   only_files_starts_with_delimiter: mule
+
+      - name: File List using Bash
+        run: |
+         ls -la
 
       - name: File List using Bash
         run: |
