@@ -45,6 +45,10 @@ jobs:
         with:
           repository: "ghosharijit1986/mulesoft-configs-dev"
           ref: main
+
+      - name: Files List
+        run: |
+          ls -la
           
       - name: Replace config file
         run: |
