@@ -66,7 +66,7 @@ jobs:
 
       - name: Rename Artifact
         run: |
-          jarFile= "$(basename /prior-artifact/mq-test/.*jar)
+          jarFile= "$(basename /prior-artifact/mq-test/.*jar)"
           echo $jarFile
       - name: Upload artifact 
         uses: actions/upload-artifact@v3.1.3
