@@ -19,7 +19,8 @@ on:
         type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-
+env:
+  jarFile: 'not-set'
 jobs:
   # This workflow contains a single job called "build"
   prod-deployment:
@@ -62,11 +63,15 @@ jobs:
       - name: Replace config file
         run: |
            jar uf prior-artifact/mq-test/mq-test-1.0.0-SNAPSHOT-mule-application.jar mule-config-properties.yaml
-          
+
+      - name: Rename Artifact
+        run: |
+          jarFile= "$(basename /prior-artifact/mq-test/.*jar)
+          echo $jarFile
       - name: Upload artifact 
         uses: actions/upload-artifact@v3.1.3
         with:
-          name: test
+          name: $jarFile
           path: prior-artifact/mq-test/*.jar
           
 
