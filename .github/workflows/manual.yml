@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir config
 
-      - name : Config Checkout
+      - name: Config Checkout
       - uses: actions/checkout@v4.1.1
         with:
           repository: "ghosharijit1986/mulesoft-configs-dev"
