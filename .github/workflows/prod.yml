@@ -16,7 +16,7 @@ on:
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
-        type: integer
+        type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 
@@ -49,7 +49,7 @@ jobs:
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: manual.yml
-          run_number: inputs.build
+          run_number: ${{inputs.build}}
           path: ./prior-artifact
          
         env:
