@@ -34,7 +34,7 @@ jobs:
         uses: Legit-Labs/action-download-artifact@v2.18.0
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          workflow: UAT
+          workflow: manual.yml
           run_number: 64
          
         env:
