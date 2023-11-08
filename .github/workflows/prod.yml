@@ -19,6 +19,7 @@ on:
         type: integer
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
 jobs:
   # This workflow contains a single job called "build"
   prod-deployment:
@@ -30,9 +31,12 @@ jobs:
           
       # Runs a single command using the runners shell
       - name: Download Previous Artifact
-        uses: synergy-au/download-workflow-artifacts-action@v1.1
+        uses: Legit-Labs/action-download-artifact@v2.18.0
         with:
-         workflow-run-id: ${{inputs. uat-build-id}}
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: UAT
+          run_number: ${inputs.uat-build-id}
+         
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -50,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.3
         with:
           name: test
-          path: ./*.jar
+          path: artifacts/*.jar
           
 
        
