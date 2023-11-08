@@ -56,7 +56,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Files List
         run: |
-          # cd ./prior-artifact
+          cd ./prior-artifact
           ls
           
       #- name: Replace config file
