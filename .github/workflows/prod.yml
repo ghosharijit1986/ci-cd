@@ -7,11 +7,21 @@ on:
   
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      UAT Build Id:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'UAT Build Run Id'
+        # Default value if no value is explicitly provided
+        default: '0'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: integer
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  download-release-jar:
+  prod-deployment:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -20,24 +30,27 @@ jobs:
           
       # Runs a single command using the runners shell
       - name: Download Previous Artifact
-        uses: alextompkins/download-prior-artifact@v1.1.1
+        uses: synergy-au/download-workflow-artifacts-action@v1.1
         with:
-         name: mq-test
-         path: ${{ github.repository }}
-         repo: ${{ github.repository }}
-         commitHash: 4151927
+         workflow-run-id: ${{inputs.UAT Build Id}}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Copy File
-        uses: RomanosTrechlis/actions-copy-files@1.0
 
+      - name: Config Checkout
+        uses: actions/checkout@v4.1.1
         with:
-          source-files: artifact.zip
-          destination-username: ghosharijit1986
-          destination-repository: ci-cd
-          destination-branch: main
-        env:
-         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
+          repository: "ghosharijit1986/mulesoft-configs-dev"
+          ref: main
+          
+      - name: Replace config file
+        run: |
+          jar uf mq-test-1.0.0-SNAPSHOT-mule-application-dd75afd mule-config-properties.yaml
+          
+      - name: Upload artifact 
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          name: ${{ inputs.repository }}
+          path: ${{github_workspace}}/*.jar
+          
 
        
