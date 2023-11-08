@@ -52,6 +52,7 @@ jobs:
 
       - name: Files List
         run: |
+          cd ./prior-artifact
           ls -la
           
       #- name: Replace config file
