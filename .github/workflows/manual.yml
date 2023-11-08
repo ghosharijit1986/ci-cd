@@ -55,6 +55,10 @@ jobs:
         run: |
          cd ./config
          ls -la
+
+      - name: Copy Environment Config to SRC
+        run: |
+          cp ./config/mule-config-properties.yaml ./src/main/resources/mule-config-properties.yaml
         
           
       # Runs a single command using the runners shell
