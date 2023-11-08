@@ -58,7 +58,7 @@ jobs:
       - name: Files List
         run: |
           # cd ./prior-artifact
-          ls /home
+          ls /home/runner/work/ci-cd/ci-cd
           
       #- name: Replace config file
       #  run: |
