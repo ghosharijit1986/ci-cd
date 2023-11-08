@@ -54,14 +54,14 @@ jobs:
          
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Files List
-        run: |
-          cd ./prior-artifact
-          ls
-          
-      #- name: Replace config file
+      #- name: Files List
       #  run: |
-     #     jar uf artifacts/mq-test/mq-test-1.0.0-SNAPSHOT-mule-application.jar mule-config-properties.yaml
+       #   cd ./prior-artifact
+        #  ls
+          
+      - name: Replace config file
+        run: |
+     #     jar uf prior-artifact/mq-test/mq-test-1.0.0-SNAPSHOT-mule-application.jar mule-config-properties.yaml
           
     #  - name: Upload artifact 
    #     uses: actions/upload-artifact@v3.1.3
