@@ -50,15 +50,15 @@ jobs:
         run: |
           ls -la
           
-      - name: Replace config file
-        run: |
-          jar uf artifacts/mq-test/mq-test-1.0.0-SNAPSHOT-mule-application.jar mule-config-properties.yaml
+      #- name: Replace config file
+      #  run: |
+     #     jar uf artifacts/mq-test/mq-test-1.0.0-SNAPSHOT-mule-application.jar mule-config-properties.yaml
           
-      - name: Upload artifact 
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: test
-          path: artifacts/*.jar
+    #  - name: Upload artifact 
+   #     uses: actions/upload-artifact@v3.1.3
+   #     with:
+    #      name: test
+    #      path: artifacts/*.jar
           
 
        
