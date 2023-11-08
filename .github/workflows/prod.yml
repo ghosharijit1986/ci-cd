@@ -32,6 +32,11 @@ jobs:
       - name: Make Dir
         run: |
           mkdir prior-artifact
+
+      - name: Files List
+        run: |
+          # cd ./prior-artifact
+          ls -la
       # Runs a single command using the runners shell
       - name: Download Previous Artifact
         uses: Legit-Labs/action-download-artifact@v2.18.0
@@ -52,7 +57,7 @@ jobs:
 
       - name: Files List
         run: |
-          cd ./prior-artifact
+          # cd ./prior-artifact
           ls -la
           
       #- name: Replace config file
