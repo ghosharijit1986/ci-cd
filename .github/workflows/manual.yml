@@ -29,17 +29,27 @@ jobs:
     steps:
    
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: API Checkout
       - uses: actions/checkout@v4.1.1
       
         with:
           repository:  "ghosharijit1986/${{ inputs.repository }}"
           ref: release
 
-      - uses: actions/checkout@v4.1.1
       
-        with:
-          repository:  "ghosharijit1986/mulesoft-configs-dev"
-          ref: main
+      - name: Config Dir Creation
+        run: |
+          mkdir config
+
+      - name: File List
+        run: |
+          ls -la
+          
+     # - uses: actions/checkout@v4.1.1
+      
+     #   with:
+      #    repository:  "ghosharijit1986/mulesoft-configs-dev"
+      #    ref: main
           
     #     
       #- name: File List
@@ -48,9 +58,9 @@ jobs:
        #  directory: git
       #   only_files_starts_with_delimiter: mule
 
-      - name: File List using Bash
-        run: |
-         ls -la
+     # - name: File List using Bash
+     #   run: |
+       #  ls -la
 
       - name: File List using Bash
         run: |
