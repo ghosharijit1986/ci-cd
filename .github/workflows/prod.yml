@@ -28,7 +28,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-          
+
+      - name: Make Dir
+        run: |
+          mkdir prior-artifact
       # Runs a single command using the runners shell
       - name: Download Previous Artifact
         uses: Legit-Labs/action-download-artifact@v2.18.0
@@ -36,6 +39,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: manual.yml
           run_number: 66
+          path: ./prior-artifact
          
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
