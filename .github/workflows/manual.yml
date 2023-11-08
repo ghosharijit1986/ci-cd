@@ -50,6 +50,11 @@ jobs:
         run: |
          #cd ./src/main/resources
          ls -la
+
+      - name: File List under Config
+        run: |
+         cd ./config
+         ls -la
         
           
       # Runs a single command using the runners shell
