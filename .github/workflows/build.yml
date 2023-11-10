@@ -25,6 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4.1.1
 
+
   cache-dependencies:
     runs-on: ubuntu-latest
     steps:
@@ -49,7 +50,9 @@ jobs:
     needs: [code-checkout]
     steps:
       - name: Build
-        run: mvn -B package --file pom.xml
+        #run: mvn -B package --file pom.xml
+        run:
+          ls
 
   rename-artifact:
     runs-on: ubuntu-latest
