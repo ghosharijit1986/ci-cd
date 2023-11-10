@@ -52,7 +52,7 @@ jobs:
       - name: Build
         #run: mvn -B package --file pom.xml
         run:
-          ls
+          ls /git
 
   rename-artifact:
     runs-on: ubuntu-latest
