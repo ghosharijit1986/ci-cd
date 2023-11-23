@@ -63,7 +63,7 @@ jobs:
         
       - name: Get Version
         run: |
-         VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:3.2.0:evaluate -Dexpression=version))
+         VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:3.2.0:evaluate -Dexpression=version)
          echo $VERSION
       # Runs a single command using the runners shell
       - name: Cache Dependencies
