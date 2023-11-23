@@ -65,6 +65,9 @@ jobs:
         run: |
          VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
          echo $VERSION
+         mvn versions:set -DnewVersion=($VERSION"-uat")
+         NEW_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+         echo $NEW_VERSION
       # Runs a single command using the runners shell
       - name: Cache Dependencies
         uses: actions/cache@v3
